@@ -1,0 +1,45 @@
+{
+  "name": "payconiq_assignment",
+  "version": "1.0.0",
+  "description": "Payconiq Assignment",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm install",
+    "lint": "eslint ./ -c .eslintrc.js --ext js,ts --fix",
+    "prettier": "npx prettier --write \"**/*.{json,md,ts}\"",
+    "test:chrome": "npx playwright test --project=Chrome",
+    "test:firefox": "npx playwright test --project=Firefox",
+    "test:webkit": "npx playwright test --project=WebKit",
+    "test": "npx playwright test",
+    "show-report": "npx playwright show-report",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "playwright",
+    "automation"
+  ],
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --cache",
+      "git add"
+    ],
+    "*.{js,ts,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "author": "Sahil Goyal",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.22",
+    "@types/jsdom": "^16.2.14",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "eslint": "^8.6.0",
+    "husky": "^7.0.4",
+    "jsdom": "^19.0.0",
+    "lint-staged": "^12.1.7",
+    "playwright": "^1.22",
+    "prettier": "2.5.1"
+  }
+}
